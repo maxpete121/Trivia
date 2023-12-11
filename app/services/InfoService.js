@@ -15,6 +15,15 @@ class InfoService{
         AppState.Infos = questions
         console.log(AppState.Infos)
     }
+
+    findQuestion(questionId){
+        let question = AppState.Infos
+        let active = question.find(needed => needed.id == questionId)
+        AppState.activeInfo = active
+    }
+
+
+
 }
 
 export const infoService = new InfoService()

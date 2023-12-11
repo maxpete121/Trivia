@@ -17,6 +17,8 @@ class ObservableAppState extends EventEmitter {
     //   // incorrect_answers: ['eh', 'alright', 'whatever']
     // })
   ]
+/**@type {Info} */
+  activeInfo = null
 }
 
 export const AppState = createObservableProxy(new ObservableAppState())
