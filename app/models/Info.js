@@ -1,3 +1,4 @@
+import { generateId } from "../utils/GenerateId.js"
 
 
 
@@ -10,6 +11,7 @@ export class Info{
         this.answer = data.correct_answer
         this.wrong = data.incorrect_answers
         this.type = data.type
+        this.id = generateId()
     }
 
 
@@ -24,13 +26,12 @@ export class Info{
         <h5 class="ms-4 me-2">Difficulty:</h5>
         <h5>${this.difficulty}</h5>
     </span>
-        <button onclick="app.InfoController.drawQuestion('')">Open</button>
+        <button onclick="app.InfoController.drawActive('${this.id}')">Open</button>
     </div>
         `
     }
     get questionTemplate(){
         return`
-        <div>${this.category}</div>
         <div>${this.question}</div>
         `
     }

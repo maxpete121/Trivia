@@ -10,8 +10,10 @@ class InfoService{
         console.log('api grabbed', response)
         let body = await response.json()
         console.log('body', body)
-        let questions = body.results.map(newInfo => new Info(newInfo))
+        let questions = await body.results.map(newInfo => new Info(newInfo))
         console.log(questions)
+        AppState.Infos = questions
+        console.log(AppState.Infos)
     }
 }
 

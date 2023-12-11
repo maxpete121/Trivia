@@ -11,20 +11,28 @@ function _drawQuestions(){
     console.log('draw')
 }
 
-function _drawActive(){
 
-}
 
 export class InfoController{
     constructor(){
         // debugger
         console.log('controller loaded')
-        AppState.on('Infos', _drawQuestions)
+        AppState.on('Infos', _drawQuestions())
         this.grabQuestions()
+        _drawQuestions()
         
     }
 
     grabQuestions(){
         infoService.grabQuestions()
     }
+
+    drawActive(questionId){
+        let question = AppState.Infos
+        let content = ''
+        let active = question.find(needed => needed.id == questionId)
+        content = active
+        document.getElementById('question-ask').innerHTML = content
+    }
+
 }
