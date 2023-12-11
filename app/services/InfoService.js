@@ -14,12 +14,24 @@ class InfoService{
         console.log(questions)
         AppState.Infos = questions
         console.log(AppState.Infos)
+        // this.countQuestions()
     }
 
     findQuestion(questionId){
         let question = AppState.Infos
         let active = question.find(needed => needed.id == questionId)
         AppState.activeInfo = active
+    }
+
+    countQuestions(){
+        let questionCount = AppState.Infos
+        for(let i = 0; i < questionCount.length; i++){
+            // console.log(i)
+            const info = AppState.Infos[i]
+            info.Number = i + 1
+            console.log(info)
+            
+        }
     }
 
 

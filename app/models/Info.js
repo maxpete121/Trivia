@@ -1,3 +1,4 @@
+import { AppState } from "../AppState.js"
 import { generateId } from "../utils/GenerateId.js"
 
 
@@ -12,7 +13,7 @@ export class Info{
         this.wrong = data.incorrect_answers
         this.type = data.type
         this.id = generateId()
-        this.Number = number
+        // this.Number = number
     }
 
 
@@ -23,6 +24,10 @@ export class Info{
             <h5 class="ms-4 me-2">Category:</h5>
             <h5>${this.category}</h5>
         </span>
+        <span class="d-flex">
+        <h5 class="ms-4 me-2">Number:</h5>
+        <h5>${this.Number}</h5>
+    </span>
         <span class="d-flex">
         <h5 class="ms-4 me-2">Difficulty:</h5>
         <h5>${this.difficulty}</h5>
@@ -66,5 +71,10 @@ export class Info{
         </span>
     </div>
         `
+    }
+
+    get Number(){
+        const foundIndex = AppState.Infos.findIndex(info => info.id == this.id)
+        return foundIndex + 1
     }
 }

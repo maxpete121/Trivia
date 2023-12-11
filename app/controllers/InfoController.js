@@ -17,9 +17,11 @@ export class InfoController{
     constructor(){
         // debugger
         console.log('controller loaded')
-        AppState.on('Infos', _drawQuestions)
         this.grabQuestions()
-        _drawQuestions()
+        // AppState.on('Infos', this.countQuestions)
+        AppState.on('Infos', _drawQuestions)
+        // this.countQuestions()
+        // _drawQuestions()
         
     }
 
@@ -39,5 +41,11 @@ export class InfoController{
         infoService.findQuestion(questionId)
         this.drawActive()
     }
+
+    countQuestions(){
+        infoService.countQuestions()
+        
+    }
+
 
 }
