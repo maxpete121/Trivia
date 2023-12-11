@@ -8,9 +8,10 @@ class ObservableAppState extends EventEmitter {
   examples = []
 
   Infos = [
-    new Info({
-      
-    })
+    // new Info({
+    //   difficulty: 'Easy',
+    //   category: 'Entertainment: Video Games',
+    // })
   ]
 }
 
