@@ -26,13 +26,13 @@ export class Info{
         </span>
         <span class="d-flex">
         <h5 class="ms-4 me-2">Number:</h5>
-        <h5>${this.Number}</h5>
+        <h5>${this.Number ? this.Number : this.NumberMedium}</h5>
     </span>
         <span class="d-flex">
         <h5 class="ms-4 me-2">Difficulty:</h5>
         <h5>${this.difficulty}</h5>
     </span>
-        <button onclick="app.InfoController.findQuestion('${this.id}')">Open</button>
+        <button onclick="app.InfoController.findQuestion('${this.id}', '${this.difficulty}')">Open</button>
     </div>
         `
     }
@@ -75,6 +75,11 @@ export class Info{
 
     get Number(){
         const foundIndex = AppState.Infos.findIndex(info => info.id == this.id)
+        return foundIndex + 1
+    }
+
+    get NumberMedium(){
+        const foundIndex = AppState.InfosMedium.findIndex(info => info.id == this.id)
         return foundIndex + 1
     }
 }

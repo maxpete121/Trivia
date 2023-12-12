@@ -26,10 +26,18 @@ class InfoService{
     }
 
 
-    findQuestion(questionId){
-        let question = AppState.Infos
-        let active = question.find(needed => needed.id == questionId)
-        AppState.activeInfo = active
+    findQuestion(questionId, difficulty){
+        console.log(difficulty)
+        if(difficulty == 'easy'){
+            let question = AppState.Infos
+            let active = question.find(needed => needed.id == questionId)
+            AppState.activeInfo = active
+        }
+        if(difficulty == 'medium'){
+            let questionMed = AppState.InfosMedium
+            let active = questionMed.find(needed => needed.id == questionId)
+            AppState.activeInfo = active
+        }
     }
 
     countQuestions(){
