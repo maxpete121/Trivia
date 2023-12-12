@@ -19,18 +19,18 @@ export class Info{
 
     get questionSelect(){
         return`
-        <div class="col-2 bg-dark text-light text-center mb-2 ms-2 p-2 rounded-2">
+        <div class="col-2 bg-dark text-light text-center m-1 p-1 rounded-2">
         <span class="d-flex">
-            <h5 class="ms-4 me-2">Category:</h5>
-            <h5>${this.category}</h5>
+            <h6 class="ms-4 me-2">Category:</h6>
+            <h6>${this.category}</h6>
         </span>
         <span class="d-flex">
-        <h5 class="ms-4 me-2">Number:</h5>
-        <h5>${this.Number ? this.Number : this.NumberMedium}</h5>
+        <h6 class="ms-4 me-2">Number:</h6>
+        <h6>${this.Number ? this.Number : this.NumberMedium}</h6>
     </span>
         <span class="d-flex">
-        <h5 class="ms-4 me-2">Difficulty:</h5>
-        <h5>${this.difficulty}</h5>
+        <h6 class="ms-4 me-2">Difficulty:</h6>
+        <h6>${this.difficulty}</h6>
     </span>
         <button onclick="app.InfoController.findQuestion('${this.id}', '${this.difficulty}')">Open</button>
     </div>
