@@ -28,7 +28,7 @@ export class Info{
             <h6 class="fw-bold">Category:</h6>
             <h6>${this.category}</h6>
         </span>
-        <span class="me-3 fw-bold">
+        <span class="me-4 fw-bold">
         <h6 class="ms-4 me-2">Difficulty:</h6>
         <h6>${this.difficulty}</h6>
     </span>
