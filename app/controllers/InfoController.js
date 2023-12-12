@@ -17,12 +17,22 @@ export class InfoController {
 
 
     }
+
+    drawQuestionHome(){
+        let questionHome = AppState.Infos
+        let content = ''
+        questionHome.find(question => content = question.questionHomeTemplate)
+        document.getElementById('question-home').innerHTML = content
+        this.drawActive()
+    }
+
     drawQuestions() {
         let questions = AppState.Infos
         let content = ''
         questions.forEach(question => content += question.questionSelect)
         document.getElementById('question-select').innerHTML = content
         console.log('draw')
+        this.closeActive()
     }
 
     drawMediumQuestions(){
@@ -30,6 +40,7 @@ export class InfoController {
         let content = ''
         questions.forEach(question => content += question.questionSelect)
         document.getElementById('question-select').innerHTML = content
+        this.closeActive()
     }
 
     grabQuestions() {
@@ -48,9 +59,14 @@ export class InfoController {
         document.getElementById('answer-view').innerHTML = contentTwo
     }
 
+    closeActive(){
+        let content = ''
+        document.getElementById('question-home').innerHTML = content
+    }
+
     findQuestion(questionId, difficulty) {
         infoService.findQuestion(questionId, difficulty)
-        this.drawActive()
+        this.drawQuestionHome()
     }
 
     countQuestions() {

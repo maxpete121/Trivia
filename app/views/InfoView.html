@@ -1,52 +1,17 @@
 <section class="container-fluid">
     <div class="text-center">
-        <h2>Select Questions</h2>
-        <button onclick="app.InfoController.drawQuestions()">Easy</button>
-        <button onclick="app.InfoController.drawMediumQuestions()">Medium</button>
-        <button>Hard</button>
-        <div class="row d-flex justify-content-center" id="question-select">
-            <!-- <div class="col-2 bg-dark text-light text-center">
-                <span class="d-flex">
-                    <h5 class="ms-4 me-2">Category:</h5>
-                    <h5></h5>
-                </span>
-                <button onclick="app.InfoController.drawQuestion('')">Open</button>
-            </div> -->
+        <h2 class="fw-bold">Select Questions</h2>
+        <button class="btn btn-outline-dark" onclick="app.InfoController.drawQuestions()">Easy</button>
+        <button class="btn btn-outline-dark ms-3 me-3"
+            onclick="app.InfoController.drawMediumQuestions()">Medium</button>
+        <button class="btn btn-outline-dark">Hard</button>
+        <div class="row mt-3">
+            <div class="col-6 justify-content-center" id="question-select">
+
+            </div>
+            <div class="col-6 d-flex flex-column align-items-center" id="question-home">
+            </div>
         </div>
     </div>
-    <div class="row  d-flex justify-content-center">
-        <div class="col-3 bg-dark text-light rounded-2 border border-primary">
-            <h3>Question</h3>
-            <div id="question-ask"></div>
-        </div>
-    </div>
-    <div class="row text-center">
-        <h3>Choose an answer:</h3>
-        <div id="answer-view" class="d-flex flex-column align-items-center">
-            <!-- <div class="col-1 bg-dark rounded-2 p-2 text-light m-2">
-                <span class="d-flex">
-                    <h4 class="me-3">A.</h4>
-                    <h4>duh</h4>
-                </span>
-            </div>
-            <div class="col-1 bg-dark rounded-2 p-2 text-light m-2">
-                <span class="d-flex">
-                    <h4 class="me-3">B.</h4>
-                    <h4>duh</h4>
-                </span>
-            </div>
-            <div class="col-1 bg-dark rounded-2 p-2 text-light m-2">
-                <span class="d-flex">
-                    <h4 class="me-3">C.</h4>
-                    <h4>duh</h4>
-                </span>
-            </div>
-            <div class="col-1 bg-dark rounded-2 p-2 text-light m-2">
-                <span class="d-flex">
-                    <h4 class="me-3">D.</h4>
-                    <h4>duh</h4>
-                </span>
-            </div> -->
-        </div>
-    </div>
+
 </section>
