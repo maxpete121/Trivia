@@ -17,6 +17,15 @@ class InfoService{
         // this.countQuestions()
     }
 
+    async grabMediumQuestions(){
+        let response = await fetch('https://opentdb.com/api.php?amount=10&category=15&difficulty=medium&type=multiple')
+        let body = await response.json()
+        let questions = await body.results.map(newInfo => new Info(newInfo))
+        AppState.InfosMedium = questions
+        console.log(AppState.InfosMedium)
+    }
+
+
     findQuestion(questionId){
         let question = AppState.Infos
         let active = question.find(needed => needed.id == questionId)

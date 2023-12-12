@@ -17,6 +17,8 @@ class ObservableAppState extends EventEmitter {
     //   // incorrect_answers: ['eh', 'alright', 'whatever']
     // })
   ]
+  /**@type {Info[]} */
+  InfosMedium = []
 /**@type {Info} */
   activeInfo = null
 }

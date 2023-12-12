@@ -18,15 +18,19 @@ export class InfoController{
         // debugger
         console.log('controller loaded')
         this.grabQuestions()
+        this.grabMediumQuestions()
         // AppState.on('Infos', this.countQuestions)
-        AppState.on('Infos', _drawQuestions)
-        // this.countQuestions()
-        // _drawQuestions()
+        // AppState.on('Infos', _drawQuestions)
+
         
     }
 
     grabQuestions(){
         infoService.grabQuestions()
+    }
+
+    grabMediumQuestions(){
+        infoService.grabMediumQuestions()
     }
 
     drawActive(){
